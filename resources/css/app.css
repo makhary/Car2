@@ -9,3 +9,211 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body.app-body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f6f7fb;
+    color: #0f172a;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: #0f172a;
+    color: #f8fafc;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.app-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.app-nav {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: #e2e8f0;
+}
+
+.app-main {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 24px 48px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.page-kicker {
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    margin: 0;
+}
+
+.page-title {
+    margin: 4px 0 0 0;
+    font-size: 28px;
+}
+
+.page-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+.button-secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 14px 45px rgba(15, 23, 42, 0.06);
+    margin-bottom: 18px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 14px;
+}
+
+.gap-lg {
+    gap: 18px;
+}
+
+.kpi .label {
+    color: #64748b;
+    margin: 0 0 6px 0;
+    font-size: 13px;
+}
+
+.kpi .value {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.kpi .hint {
+    margin: 4px 0 0 0;
+    color: #94a3b8;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.list-title { margin: 0; font-weight: 700; }
+.list-sub { margin: 4px 0 0 0; color: #64748b; font-size: 14px; }
+
+.table-wrapper { overflow-x: auto; }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table th { color: #475569; font-size: 13px; }
+
+.badge {
+    display: inline-block;
+    background: #0f172a;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.badge-soft { background: #e2e8f0; color: #0f172a; }
+.badge-success { background: #16a34a; }
+.badge-muted { background: #cbd5e1; color: #0f172a; }
+
+.tag { background: #f8fafc; padding: 6px 10px; border-radius: 8px; color: #0f172a; font-weight: 600; }
+
+.empty { color: #94a3b8; text-align: center; padding: 12px 0; }
+
+.filters { display: flex; gap: 10px; align-items: center; }
+.filters input, .filters select {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.link { color: #2563eb; text-decoration: none; font-weight: 600; }
+.link:hover { text-decoration: underline; }
+
+.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.facts li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+
+.vehicle-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.tag-group { display: flex; gap: 8px; align-items: center; }
+
+.actions { text-align: right; }
