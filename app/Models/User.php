@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'structure_id',
     ];
 
     /**
@@ -44,5 +47,37 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function structure()
+    {
+        return $this->belongsTo(Structure::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function vehicleAssignments()
+    {
+        return $this->hasMany(VehicleAssignment::class);
+    }
+
+    public function fuelLogs()
+    {
+        return $this->hasMany(FuelLog::class);
+    }
+
+    public function maintenances()
+    {
+        return $this->hasMany(Maintenance::class, 'reported_by');
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->roles()
+            ->whereIn('name', ['admin', 'fleet_manager'])
+            ->exists();
     }
 }
